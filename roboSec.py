@@ -1,16 +1,17 @@
 import pyautogui
 import time
+inicio = time.time()
 
 # X padrão do formulário
 xKirk = 450
 
 # Y padrão Planilha
 # 270 inicia
-yPlanilha = 310
+yPlanilha = 430
 contadorChamado = 0
-while yPlanilha <= 410:
+while yPlanilha <= 530:
     # Resolução 1920 x 1080
-    inicio = time.time()
+
     pyautogui.click(114, 171)
     pyautogui.sleep(2)
     # Solicitação de pagamentos
@@ -130,8 +131,8 @@ while yPlanilha <= 410:
 
     contadorChamado = contadorChamado + 1
     yPlanilha = yPlanilha + 20
-    fim = time.time()
 
+fim = time.time()
 
-print(round(fim - inicio, 2)+" Segundos e teve " +
+print(str(round(fim - inicio, 2))+" segundos e teve " +
       str(contadorChamado) + " chamados abertos")
