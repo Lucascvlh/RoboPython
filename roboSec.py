@@ -7,9 +7,10 @@ xKirk = 450
 
 # Y padrão Planilha
 # 270 inicia
-yPlanilha = 430
+yPlanilha = 770
 contadorChamado = 0
-while yPlanilha <= 530:
+terminar = 750
+while yPlanilha <= terminar:
     # Resolução 1920 x 1080
 
     pyautogui.click(114, 171)
@@ -86,9 +87,10 @@ while yPlanilha <= 530:
     pyautogui.click(1650, 118, clicks=2, interval=0.25)
     pyautogui.press('backspace')
     pyautogui.hotkey('ctrl', 'v')
-    pyautogui.sleep(5)
+    pyautogui.press('enter')
+    pyautogui.sleep(2)
     # Pegando a NF
-    pyautogui.click(1650, 157)
+    pyautogui.click(1650, 300, clicks=2, interval=0.25)
     pyautogui.sleep(5)
     # 3 pontinho do download
     pyautogui.click(2525, 106)
@@ -131,8 +133,10 @@ while yPlanilha <= 530:
 
     contadorChamado = contadorChamado + 1
     yPlanilha = yPlanilha + 20
-
+pyautogui.click(-536, 470)
+pyautogui.scroll(-1000)
 fim = time.time()
 
-print(str(round(fim - inicio, 2))+" segundos e teve " +
-      str(contadorChamado) + " chamados abertos")
+print("O processo durou " + str(round(fim - inicio, 0)/60)+" minutos e teve " +
+      str(contadorChamado) + " chamados abertos com média de tempo de " + str(round(fim - inicio, 2)/contadorChamado) +
+      " segundos para cada chamado")
